@@ -8,7 +8,7 @@ const client = new ArenaFlyIo({
 });
 
 describe('resource tokens', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('requestKms', async () => {
     const responsePromise = client.tokens.requestKms();
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource tokens', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('requestOidc', async () => {
     const responsePromise = client.tokens.requestOidc({});
     const rawResponse = await responsePromise.asResponse();
@@ -32,7 +32,7 @@ describe('resource tokens', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveCurrent', async () => {
     const responsePromise = client.tokens.retrieveCurrent();
     const rawResponse = await responsePromise.asResponse();

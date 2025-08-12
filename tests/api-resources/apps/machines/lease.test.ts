@@ -8,7 +8,7 @@ const client = new ArenaFlyIo({
 });
 
 describe('resource lease', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.apps.machines.lease.create('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource lease', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.apps.machines.lease.create('machine_id', {
       app_name: 'app_name',
@@ -30,7 +30,7 @@ describe('resource lease', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.apps.machines.lease.retrieve('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -42,12 +42,12 @@ describe('resource lease', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.apps.machines.lease.retrieve('machine_id', { app_name: 'app_name' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('release: only required params', async () => {
     const responsePromise = client.apps.machines.lease.release('machine_id', {
       app_name: 'app_name',
@@ -62,7 +62,7 @@ describe('resource lease', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('release: required and optional params', async () => {
     const response = await client.apps.machines.lease.release('machine_id', {
       app_name: 'app_name',
