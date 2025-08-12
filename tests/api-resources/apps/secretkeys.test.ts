@@ -8,7 +8,7 @@ const client = new ArenaFlyIo({
 });
 
 describe('resource secretkeys', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.apps.secretkeys.retrieve('secret_name', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource secretkeys', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.apps.secretkeys.retrieve('secret_name', {
       app_name: 'app_name',
@@ -28,7 +28,7 @@ describe('resource secretkeys', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.apps.secretkeys.list('app_name');
     const rawResponse = await responsePromise.asResponse();
@@ -40,7 +40,7 @@ describe('resource secretkeys', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -52,7 +52,7 @@ describe('resource secretkeys', () => {
     ).rejects.toThrow(ArenaFlyIo.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.apps.secretkeys.delete('secret_name', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -64,12 +64,12 @@ describe('resource secretkeys', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.apps.secretkeys.delete('secret_name', { app_name: 'app_name' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createOrUpdate: only required params', async () => {
     const responsePromise = client.apps.secretkeys.createOrUpdate('secret_name', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -81,7 +81,7 @@ describe('resource secretkeys', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createOrUpdate: required and optional params', async () => {
     const response = await client.apps.secretkeys.createOrUpdate('secret_name', {
       app_name: 'app_name',
@@ -90,7 +90,7 @@ describe('resource secretkeys', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('decrypt: only required params', async () => {
     const responsePromise = client.apps.secretkeys.decrypt('secret_name', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -102,7 +102,7 @@ describe('resource secretkeys', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('decrypt: required and optional params', async () => {
     const response = await client.apps.secretkeys.decrypt('secret_name', {
       app_name: 'app_name',
@@ -112,7 +112,7 @@ describe('resource secretkeys', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('encrypt: only required params', async () => {
     const responsePromise = client.apps.secretkeys.encrypt('secret_name', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -124,7 +124,7 @@ describe('resource secretkeys', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('encrypt: required and optional params', async () => {
     const response = await client.apps.secretkeys.encrypt('secret_name', {
       app_name: 'app_name',
@@ -134,7 +134,7 @@ describe('resource secretkeys', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('generate: only required params', async () => {
     const responsePromise = client.apps.secretkeys.generate('secret_name', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -146,7 +146,7 @@ describe('resource secretkeys', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('generate: required and optional params', async () => {
     const response = await client.apps.secretkeys.generate('secret_name', {
       app_name: 'app_name',
@@ -155,7 +155,7 @@ describe('resource secretkeys', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('sign: only required params', async () => {
     const responsePromise = client.apps.secretkeys.sign('secret_name', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -167,7 +167,7 @@ describe('resource secretkeys', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('sign: required and optional params', async () => {
     const response = await client.apps.secretkeys.sign('secret_name', {
       app_name: 'app_name',
@@ -176,7 +176,7 @@ describe('resource secretkeys', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('verify: only required params', async () => {
     const responsePromise = client.apps.secretkeys.verify('secret_name', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -188,7 +188,7 @@ describe('resource secretkeys', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('verify: required and optional params', async () => {
     const response = await client.apps.secretkeys.verify('secret_name', {
       app_name: 'app_name',

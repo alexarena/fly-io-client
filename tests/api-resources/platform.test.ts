@@ -8,7 +8,7 @@ const client = new ArenaFlyIo({
 });
 
 describe('resource platform', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listRegions', async () => {
     const responsePromise = client.platform.listRegions();
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource platform', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listRegions: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -31,7 +31,7 @@ describe('resource platform', () => {
     ).rejects.toThrow(ArenaFlyIo.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('placePlacements: only required params', async () => {
     const responsePromise = client.platform.placePlacements({ org_slug: 'personal' });
     const rawResponse = await responsePromise.asResponse();
@@ -43,7 +43,7 @@ describe('resource platform', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('placePlacements: required and optional params', async () => {
     const response = await client.platform.placePlacements({
       org_slug: 'personal',

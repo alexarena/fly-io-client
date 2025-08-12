@@ -8,7 +8,7 @@ const client = new ArenaFlyIo({
 });
 
 describe('resource machines', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create', async () => {
     const responsePromise = client.apps.machines.create('app_name', {});
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.apps.machines.retrieve('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -32,12 +32,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.apps.machines.retrieve('machine_id', { app_name: 'app_name' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.apps.machines.update('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -49,7 +49,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.apps.machines.update('machine_id', {
       app_name: 'app_name',
@@ -254,7 +254,7 @@ describe('resource machines', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.apps.machines.list('app_name');
     const rawResponse = await responsePromise.asResponse();
@@ -266,7 +266,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -278,7 +278,7 @@ describe('resource machines', () => {
     ).rejects.toThrow(ArenaFlyIo.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('cordon: only required params', async () => {
     const responsePromise = client.apps.machines.cordon('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -290,12 +290,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('cordon: required and optional params', async () => {
     const response = await client.apps.machines.cordon('machine_id', { app_name: 'app_name' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('destroy: only required params', async () => {
     const responsePromise = client.apps.machines.destroy('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -307,12 +307,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('destroy: required and optional params', async () => {
     const response = await client.apps.machines.destroy('machine_id', { app_name: 'app_name', force: true });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('executeCommand: only required params', async () => {
     const responsePromise = client.apps.machines.executeCommand('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -324,7 +324,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('executeCommand: required and optional params', async () => {
     const response = await client.apps.machines.executeCommand('machine_id', {
       app_name: 'app_name',
@@ -336,7 +336,7 @@ describe('resource machines', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listEvents: only required params', async () => {
     const responsePromise = client.apps.machines.listEvents('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -348,12 +348,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listEvents: required and optional params', async () => {
     const response = await client.apps.machines.listEvents('machine_id', { app_name: 'app_name', limit: 0 });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listProcesses: only required params', async () => {
     const responsePromise = client.apps.machines.listProcesses('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -365,7 +365,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listProcesses: required and optional params', async () => {
     const response = await client.apps.machines.listProcesses('machine_id', {
       app_name: 'app_name',
@@ -374,7 +374,7 @@ describe('resource machines', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listVersions: only required params', async () => {
     const responsePromise = client.apps.machines.listVersions('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -386,12 +386,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listVersions: required and optional params', async () => {
     const response = await client.apps.machines.listVersions('machine_id', { app_name: 'app_name' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('restart: only required params', async () => {
     const responsePromise = client.apps.machines.restart('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -403,7 +403,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('restart: required and optional params', async () => {
     const response = await client.apps.machines.restart('machine_id', {
       app_name: 'app_name',
@@ -412,7 +412,7 @@ describe('resource machines', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('signal: only required params', async () => {
     const responsePromise = client.apps.machines.signal('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -424,7 +424,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('signal: required and optional params', async () => {
     const response = await client.apps.machines.signal('machine_id', {
       app_name: 'app_name',
@@ -432,7 +432,7 @@ describe('resource machines', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('start: only required params', async () => {
     const responsePromise = client.apps.machines.start('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -444,12 +444,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('start: required and optional params', async () => {
     const response = await client.apps.machines.start('machine_id', { app_name: 'app_name' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('stop: only required params', async () => {
     const responsePromise = client.apps.machines.stop('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -461,7 +461,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('stop: required and optional params', async () => {
     const response = await client.apps.machines.stop('machine_id', {
       app_name: 'app_name',
@@ -470,7 +470,7 @@ describe('resource machines', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('suspend: only required params', async () => {
     const responsePromise = client.apps.machines.suspend('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -482,12 +482,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('suspend: required and optional params', async () => {
     const response = await client.apps.machines.suspend('machine_id', { app_name: 'app_name' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('uncordon: only required params', async () => {
     const responsePromise = client.apps.machines.uncordon('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -499,12 +499,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('uncordon: required and optional params', async () => {
     const response = await client.apps.machines.uncordon('machine_id', { app_name: 'app_name' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('waitForState: only required params', async () => {
     const responsePromise = client.apps.machines.waitForState('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -516,7 +516,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('waitForState: required and optional params', async () => {
     const response = await client.apps.machines.waitForState('machine_id', {
       app_name: 'app_name',
