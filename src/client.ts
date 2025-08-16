@@ -746,9 +746,11 @@ export class ArenaFlyIo {
   platform: API.Platform = new API.Platform(this);
   tokens: API.Tokens = new API.Tokens(this);
 }
+
 ArenaFlyIo.Apps = Apps;
 ArenaFlyIo.Platform = Platform;
 ArenaFlyIo.Tokens = Tokens;
+
 export declare namespace ArenaFlyIo {
   export type RequestOptions = Opts.RequestOptions;
 
