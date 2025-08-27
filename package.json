@@ -1,6 +1,6 @@
 {
   "name": "@alexarena/fly-io-client",
-  "version": "0.0.1-alpha.0",
+  "version": "1.0.0",
   "description": "The official TypeScript library for the Fly Io Client API",
   "author": "Fly Io Client <>",
   "types": "dist/index.d.ts",
