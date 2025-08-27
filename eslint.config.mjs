@@ -25,7 +25,7 @@ export default tseslint.config(
         {
           patterns: [
             {
-              regex: '^arena-fly-io(/.*)?',
+              regex: '^@alexarena/fly-io-client(/.*)?',
               message: 'Use a relative import, not a package import.',
             },
           ],

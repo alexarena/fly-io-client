@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'arena-fly-io/internal/uploads';
-import { toFile } from 'arena-fly-io/core/uploads';
+import { multipartFormRequestOptions, createForm } from '@alexarena/fly-io-client/internal/uploads';
+import { toFile } from '@alexarena/fly-io-client/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

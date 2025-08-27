@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "arena-fly-io/*": ["dist/src/*"],
-      "arena-fly-io": ["dist/src/index.ts"]
+      "@alexarena/fly-io-client/*": ["dist/src/*"],
+      "@alexarena/fly-io-client": ["dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

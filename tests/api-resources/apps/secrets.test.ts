@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import ArenaFlyIo from 'arena-fly-io';
+import FlyIoClient from '@alexarena/fly-io-client';
 
-const client = new ArenaFlyIo({
+const client = new FlyIoClient({
   apiKey: 'My API Key',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
@@ -50,7 +50,7 @@ describe('resource secrets', () => {
         { min_version: 'min_version', show_secrets: true },
         { path: '/_stainless_unknown_path' },
       ),
-    ).rejects.toThrow(ArenaFlyIo.NotFoundError);
+    ).rejects.toThrow(FlyIoClient.NotFoundError);
   });
 
   // Prism tests are disabled

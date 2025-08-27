@@ -9,8 +9,8 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "arena-fly-io/*": ["src/*"],
-      "arena-fly-io": ["src/index.ts"]
+      "@alexarena/fly-io-client/*": ["src/*"],
+      "@alexarena/fly-io-client": ["src/index.ts"]
     },
     "noEmit": true,
 

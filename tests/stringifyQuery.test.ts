@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { ArenaFlyIo } from 'arena-fly-io';
+import { FlyIoClient } from '@alexarena/fly-io-client';
 
-const { stringifyQuery } = ArenaFlyIo.prototype as any;
+const { stringifyQuery } = FlyIoClient.prototype as any;
 
 describe(stringifyQuery, () => {
   for (const [input, expected] of [

@@ -61,7 +61,7 @@ export interface ClientOptions {
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
-   * Defaults to process.env['ARENA_FLY_IO_BASE_URL'].
+   * Defaults to process.env['FLY_IO_CLIENT_BASE_URL'].
    */
   baseURL?: string | null | undefined;
 
@@ -115,7 +115,7 @@ export interface ClientOptions {
   /**
    * Set the log level.
    *
-   * Defaults to process.env['ARENA_FLY_IO_LOG'] or 'warn' if it isn't set.
+   * Defaults to process.env['FLY_IO_CLIENT_LOG'] or 'warn' if it isn't set.
    */
   logLevel?: LogLevel | undefined;
 
@@ -128,9 +128,9 @@ export interface ClientOptions {
 }
 
 /**
- * API Client for interfacing with the Arena Fly Io API.
+ * API Client for interfacing with the Fly Io Client API.
  */
-export class ArenaFlyIo {
+export class FlyIoClient {
   apiKey: string | null;
 
   baseURL: string;
@@ -146,10 +146,10 @@ export class ArenaFlyIo {
   private _options: ClientOptions;
 
   /**
-   * API Client for interfacing with the Arena Fly Io API.
+   * API Client for interfacing with the Fly Io Client API.
    *
    * @param {string | null | undefined} [opts.apiKey=process.env['ARENA_FLY_IO_API_KEY'] ?? null]
-   * @param {string} [opts.baseURL=process.env['ARENA_FLY_IO_BASE_URL'] ?? https://api.machines.dev/v1] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['FLY_IO_CLIENT_BASE_URL'] ?? https://api.machines.dev/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -158,7 +158,7 @@ export class ArenaFlyIo {
    * @param {Record<string, string | undefined>} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
   constructor({
-    baseURL = readEnv('ARENA_FLY_IO_BASE_URL'),
+    baseURL = readEnv('FLY_IO_CLIENT_BASE_URL'),
     apiKey = readEnv('ARENA_FLY_IO_API_KEY') ?? null,
     ...opts
   }: ClientOptions = {}) {
@@ -169,14 +169,14 @@ export class ArenaFlyIo {
     };
 
     this.baseURL = options.baseURL!;
-    this.timeout = options.timeout ?? ArenaFlyIo.DEFAULT_TIMEOUT /* 1 minute */;
+    this.timeout = options.timeout ?? FlyIoClient.DEFAULT_TIMEOUT /* 1 minute */;
     this.logger = options.logger ?? console;
     const defaultLogLevel = 'warn';
     // Set default logLevel early so that we can log a warning in parseLogLevel.
     this.logLevel = defaultLogLevel;
     this.logLevel =
       parseLogLevel(options.logLevel, 'ClientOptions.logLevel', this) ??
-      parseLogLevel(readEnv('ARENA_FLY_IO_LOG'), "process.env['ARENA_FLY_IO_LOG']", this) ??
+      parseLogLevel(readEnv('FLY_IO_CLIENT_LOG'), "process.env['FLY_IO_CLIENT_LOG']", this) ??
       defaultLogLevel;
     this.fetchOptions = options.fetchOptions;
     this.maxRetries = options.maxRetries ?? 2;
@@ -251,7 +251,7 @@ export class ArenaFlyIo {
         if (value === null) {
           return `${encodeURIComponent(key)}=`;
         }
-        throw new Errors.ArenaFlyIoError(
+        throw new Errors.FlyIoClientError(
           `Cannot stringify type ${typeof value}; Expected string, number, boolean, or null. If you need to pass nested query parameters, you can manually encode them, e.g. { query: { 'foo[key1]': value1, 'foo[key2]': value2 } }, and please open a GitHub issue requesting better support for your use case.`,
         );
       })
@@ -723,10 +723,10 @@ export class ArenaFlyIo {
     }
   }
 
-  static ArenaFlyIo = this;
+  static FlyIoClient = this;
   static DEFAULT_TIMEOUT = 60000; // 1 minute
 
-  static ArenaFlyIoError = Errors.ArenaFlyIoError;
+  static FlyIoClientError = Errors.FlyIoClientError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -747,11 +747,11 @@ export class ArenaFlyIo {
   tokens: API.Tokens = new API.Tokens(this);
 }
 
-ArenaFlyIo.Apps = Apps;
-ArenaFlyIo.Platform = Platform;
-ArenaFlyIo.Tokens = Tokens;
+FlyIoClient.Apps = Apps;
+FlyIoClient.Platform = Platform;
+FlyIoClient.Tokens = Tokens;
 
-export declare namespace ArenaFlyIo {
+export declare namespace FlyIoClient {
   export type RequestOptions = Opts.RequestOptions;
 
   export {

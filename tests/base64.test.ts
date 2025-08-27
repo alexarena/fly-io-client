@@ -1,4 +1,4 @@
-import { fromBase64, toBase64 } from 'arena-fly-io/internal/utils/base64';
+import { fromBase64, toBase64 } from '@alexarena/fly-io-client/internal/utils/base64';
 
 describe.each(['Buffer', 'atob'])('with %s', (mode) => {
   let originalBuffer: BufferConstructor;
