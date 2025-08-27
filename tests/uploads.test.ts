@@ -1,6 +1,6 @@
 import fs from 'fs';
-import type { ResponseLike } from 'arena-fly-io/internal/to-file';
-import { toFile } from 'arena-fly-io/core/uploads';
+import type { ResponseLike } from '@alexarena/fly-io-client/internal/to-file';
+import { toFile } from '@alexarena/fly-io-client/core/uploads';
 import { File } from 'node:buffer';
 
 class MyClass {
@@ -97,7 +97,7 @@ describe('missing File error message', () => {
   });
 
   test('is thrown', async () => {
-    const uploads = await import('arena-fly-io/core/uploads');
+    const uploads = await import('@alexarena/fly-io-client/core/uploads');
     await expect(
       uploads.toFile(mockResponse({ url: 'https://example.com/my/audio.mp3' })),
     ).rejects.toMatchInlineSnapshot(

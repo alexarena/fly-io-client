@@ -7,8 +7,8 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^arena-fly-io$': '<rootDir>/src/index.ts',
-    '^arena-fly-io/(.*)$': '<rootDir>/src/$1',
+    '^@alexarena/fly-io-client$': '<rootDir>/src/index.ts',
+    '^@alexarena/fly-io-client/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',

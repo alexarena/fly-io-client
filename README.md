@@ -1,8 +1,8 @@
-# Arena Fly Io TypeScript API Library
+# Fly Io Client TypeScript API Library
 
-[![NPM version](<https://img.shields.io/npm/v/arena-fly-io.svg?label=npm%20(stable)>)](https://npmjs.org/package/arena-fly-io) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/arena-fly-io)
+[![NPM version](<https://img.shields.io/npm/v/@alexarena/fly-io-client.svg?label=npm%20(stable)>)](https://npmjs.org/package/@alexarena/fly-io-client) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@alexarena/fly-io-client)
 
-This library provides convenient access to the Arena Fly Io REST API from server-side TypeScript or JavaScript.
+This library provides convenient access to the Fly Io Client REST API from server-side TypeScript or JavaScript.
 
 The REST API documentation can be found on [fly.io](https://fly.io/docs/machines/working-with-machines/). The full API of this library can be found in [api.md](api.md).
 
@@ -15,7 +15,7 @@ npm install git+ssh://git@github.com:stainless-sdks/arena-fly-io-typescript.git
 ```
 
 > [!NOTE]
-> Once this package is [published to npm](https://www.stainless.com/docs/guides/publish), this will become: `npm install arena-fly-io`
+> Once this package is [published to npm](https://www.stainless.com/docs/guides/publish), this will become: `npm install @alexarena/fly-io-client`
 
 ## Usage
 
@@ -23,9 +23,9 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import ArenaFlyIo from 'arena-fly-io';
+import FlyIoClient from '@alexarena/fly-io-client';
 
-const client = new ArenaFlyIo({
+const client = new FlyIoClient({
   apiKey: process.env['ARENA_FLY_IO_API_KEY'], // This is the default and can be omitted
 });
 
@@ -40,14 +40,14 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import ArenaFlyIo from 'arena-fly-io';
+import FlyIoClient from '@alexarena/fly-io-client';
 
-const client = new ArenaFlyIo({
+const client = new FlyIoClient({
   apiKey: process.env['ARENA_FLY_IO_API_KEY'], // This is the default and can be omitted
 });
 
-const params: ArenaFlyIo.AppListParams = { org_slug: 'REPLACE_ME' };
-const apps: ArenaFlyIo.AppListResponse = await client.apps.list(params);
+const params: FlyIoClient.AppListParams = { org_slug: 'REPLACE_ME' };
+const apps: FlyIoClient.AppListResponse = await client.apps.list(params);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -61,7 +61,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 const apps = await client.apps.list({ org_slug: 'REPLACE_ME' }).catch(async (err) => {
-  if (err instanceof ArenaFlyIo.APIError) {
+  if (err instanceof FlyIoClient.APIError) {
     console.log(err.status); // 400
     console.log(err.name); // BadRequestError
     console.log(err.headers); // {server: 'nginx', ...}
@@ -95,7 +95,7 @@ You can use the `maxRetries` option to configure or disable this:
 <!-- prettier-ignore -->
 ```js
 // Configure the default for all requests:
-const client = new ArenaFlyIo({
+const client = new FlyIoClient({
   maxRetries: 0, // default is 2
 });
 
@@ -112,7 +112,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 <!-- prettier-ignore -->
 ```ts
 // Configure the default for all requests:
-const client = new ArenaFlyIo({
+const client = new FlyIoClient({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
 });
 
@@ -138,7 +138,7 @@ Unlike `.asResponse()` this method consumes the body, returning once it is parse
 
 <!-- prettier-ignore -->
 ```ts
-const client = new ArenaFlyIo();
+const client = new FlyIoClient();
 
 const response = await client.apps.list({ org_slug: 'REPLACE_ME' }).asResponse();
 console.log(response.headers.get('X-My-Header'));
@@ -159,13 +159,13 @@ console.log(apps.apps);
 
 The log level can be configured in two ways:
 
-1. Via the `ARENA_FLY_IO_LOG` environment variable
+1. Via the `FLY_IO_CLIENT_LOG` environment variable
 2. Using the `logLevel` client option (overrides the environment variable if set)
 
 ```ts
-import ArenaFlyIo from 'arena-fly-io';
+import FlyIoClient from '@alexarena/fly-io-client';
 
-const client = new ArenaFlyIo({
+const client = new FlyIoClient({
   logLevel: 'debug', // Show all log messages
 });
 ```
@@ -191,13 +191,13 @@ When providing a custom logger, the `logLevel` option still controls which messa
 below the configured level will not be sent to your logger.
 
 ```ts
-import ArenaFlyIo from 'arena-fly-io';
+import FlyIoClient from '@alexarena/fly-io-client';
 import pino from 'pino';
 
 const logger = pino();
 
-const client = new ArenaFlyIo({
-  logger: logger.child({ name: 'ArenaFlyIo' }),
+const client = new FlyIoClient({
+  logger: logger.child({ name: 'FlyIoClient' }),
   logLevel: 'debug', // Send all messages to pino, allowing it to filter
 });
 ```
@@ -260,10 +260,10 @@ globalThis.fetch = fetch;
 Or pass it to the client:
 
 ```ts
-import ArenaFlyIo from 'arena-fly-io';
+import FlyIoClient from '@alexarena/fly-io-client';
 import fetch from 'my-fetch';
 
-const client = new ArenaFlyIo({ fetch });
+const client = new FlyIoClient({ fetch });
 ```
 
 ### Fetch options
@@ -271,9 +271,9 @@ const client = new ArenaFlyIo({ fetch });
 If you want to set custom `fetch` options without overriding the `fetch` function, you can provide a `fetchOptions` object when instantiating the client or making a request. (Request-specific options override client options.)
 
 ```ts
-import ArenaFlyIo from 'arena-fly-io';
+import FlyIoClient from '@alexarena/fly-io-client';
 
-const client = new ArenaFlyIo({
+const client = new FlyIoClient({
   fetchOptions: {
     // `RequestInit` options
   },
@@ -288,11 +288,11 @@ options to requests:
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/node.svg" align="top" width="18" height="21"> **Node** <sup>[[docs](https://github.com/nodejs/undici/blob/main/docs/docs/api/ProxyAgent.md#example---proxyagent-with-fetch)]</sup>
 
 ```ts
-import ArenaFlyIo from 'arena-fly-io';
+import FlyIoClient from '@alexarena/fly-io-client';
 import * as undici from 'undici';
 
 const proxyAgent = new undici.ProxyAgent('http://localhost:8888');
-const client = new ArenaFlyIo({
+const client = new FlyIoClient({
   fetchOptions: {
     dispatcher: proxyAgent,
   },
@@ -302,9 +302,9 @@ const client = new ArenaFlyIo({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/bun.svg" align="top" width="18" height="21"> **Bun** <sup>[[docs](https://bun.sh/guides/http/proxy)]</sup>
 
 ```ts
-import ArenaFlyIo from 'arena-fly-io';
+import FlyIoClient from '@alexarena/fly-io-client';
 
-const client = new ArenaFlyIo({
+const client = new FlyIoClient({
   fetchOptions: {
     proxy: 'http://localhost:8888',
   },
@@ -314,10 +314,10 @@ const client = new ArenaFlyIo({
 <img src="https://raw.githubusercontent.com/stainless-api/sdk-assets/refs/heads/main/deno.svg" align="top" width="18" height="21"> **Deno** <sup>[[docs](https://docs.deno.com/api/deno/~/Deno.createHttpClient)]</sup>
 
 ```ts
-import ArenaFlyIo from 'npm:arena-fly-io';
+import FlyIoClient from 'npm:@alexarena/fly-io-client';
 
 const httpClient = Deno.createHttpClient({ proxy: { url: 'http://localhost:8888' } });
-const client = new ArenaFlyIo({
+const client = new FlyIoClient({
   fetchOptions: {
     client: httpClient,
   },

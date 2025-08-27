@@ -55,12 +55,12 @@ $ cd arena-fly-io-typescript
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link arena-fly-io
+$ yarn link @alexarena/fly-io-client
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global arena-fly-io
+$ pnpm link -—global @alexarena/fly-io-client
 ```
 
 ## Running tests

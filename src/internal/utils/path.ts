@@ -1,4 +1,4 @@
-import { ArenaFlyIoError } from '../../core/error';
+import { FlyIoClientError } from '../../core/error';
 
 /**
  * Percent-encode everything that isn't safe to have in a path without encoding safe chars.
@@ -72,7 +72,7 @@ export const createPathTagFunction = (pathEncoder = encodeURIPath) =>
         return acc + spaces + arrows;
       }, '');
 
-      throw new ArenaFlyIoError(
+      throw new FlyIoClientError(
         `Path parameters result in path with invalid segments:\n${invalidSegments
           .map((e) => e.error)
           .join('\n')}\n${path}\n${underline}`,
