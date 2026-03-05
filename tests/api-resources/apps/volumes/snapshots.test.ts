@@ -8,7 +8,7 @@ const client = new FlyIoClient({
 });
 
 describe('resource snapshots', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.apps.volumes.snapshots.create('volume_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,12 +20,12 @@ describe('resource snapshots', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.apps.volumes.snapshots.create('volume_id', { app_name: 'app_name' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.apps.volumes.snapshots.list('volume_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -37,7 +37,7 @@ describe('resource snapshots', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.apps.volumes.snapshots.list('volume_id', { app_name: 'app_name' });
   });

@@ -7,6 +7,9 @@ import { APIPromise } from '../../../core/api-promise';
 import { RequestOptions } from '../../../internal/request-options';
 import { path } from '../../../internal/utils/path';
 
+/**
+ * This site hosts documentation generated from the Fly.io Machines API OpenAPI specification. Visit our complete [Machines API docs](https://fly.io/docs/machines/api/volumes-resource/) for details about using the Volumes resource.
+ */
 export class Volumes extends APIResource {
   snapshots: SnapshotsAPI.Snapshots = new SnapshotsAPI.Snapshots(this._client);
 
@@ -179,12 +182,12 @@ export interface VolumeUpdateParams {
   app_name: string;
 
   /**
-   * Body param:
+   * Body param
    */
   auto_backup_enabled?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   snapshot_retention?: number;
 }
@@ -210,7 +213,7 @@ export interface VolumeExtendParams {
   app_name: string;
 
   /**
-   * Body param:
+   * Body param
    */
   size_gb?: number;
 }

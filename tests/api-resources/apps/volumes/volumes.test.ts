@@ -8,7 +8,7 @@ const client = new FlyIoClient({
 });
 
 describe('resource volumes', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create', async () => {
     const responsePromise = client.apps.volumes.create('app_name', {});
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource volumes', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.apps.volumes.retrieve('volume_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -32,12 +32,12 @@ describe('resource volumes', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.apps.volumes.retrieve('volume_id', { app_name: 'app_name' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.apps.volumes.update('volume_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -49,7 +49,7 @@ describe('resource volumes', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.apps.volumes.update('volume_id', {
       app_name: 'app_name',
@@ -58,7 +58,7 @@ describe('resource volumes', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.apps.volumes.list('app_name');
     const rawResponse = await responsePromise.asResponse();
@@ -70,7 +70,7 @@ describe('resource volumes', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -78,7 +78,7 @@ describe('resource volumes', () => {
     ).rejects.toThrow(FlyIoClient.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('destroy: only required params', async () => {
     const responsePromise = client.apps.volumes.destroy('volume_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -90,12 +90,12 @@ describe('resource volumes', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('destroy: required and optional params', async () => {
     const response = await client.apps.volumes.destroy('volume_id', { app_name: 'app_name' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('extend: only required params', async () => {
     const responsePromise = client.apps.volumes.extend('volume_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -107,7 +107,7 @@ describe('resource volumes', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('extend: required and optional params', async () => {
     const response = await client.apps.volumes.extend('volume_id', { app_name: 'app_name', size_gb: 0 });
   });

@@ -120,7 +120,7 @@ export interface SecretCreateOrUpdateParams {
   app_name: string;
 
   /**
-   * Body param:
+   * Body param
    */
   value?: string;
 }

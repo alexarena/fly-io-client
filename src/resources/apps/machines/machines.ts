@@ -18,6 +18,9 @@ import { buildHeaders } from '../../../internal/headers';
 import { RequestOptions } from '../../../internal/request-options';
 import { path } from '../../../internal/utils/path';
 
+/**
+ * This site hosts documentation generated from the Fly.io Machines API OpenAPI specification. Visit our complete [Machines API docs](https://fly.io/docs/machines/api/machines-resource/) for details about using the Machines resource.
+ */
 export class Machines extends APIResource {
   lease: LeaseAPI.LeaseResource = new LeaseAPI.LeaseResource(this._client);
   metadata: MetadataAPI.Metadata = new MetadataAPI.Metadata(this._client);
@@ -1146,22 +1149,22 @@ export interface MachineUpdateParams {
   config?: MachineConfig;
 
   /**
-   * Body param:
+   * Body param
    */
   current_version?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   lease_ttl?: number;
 
   /**
-   * Body param:
+   * Body param
    */
   lsvd?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   min_secrets_version?: number;
 
@@ -1177,17 +1180,17 @@ export interface MachineUpdateParams {
   region?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   skip_launch?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   skip_secrets?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   skip_service_registration?: boolean;
 }
@@ -1246,22 +1249,22 @@ export interface MachineExecuteCommandParams {
   cmd?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   command?: Array<string>;
 
   /**
-   * Body param:
+   * Body param
    */
   container?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   stdin?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   timeout?: number;
 }
@@ -1327,7 +1330,7 @@ export interface MachineSignalParams {
   app_name: string;
 
   /**
-   * Body param:
+   * Body param
    */
   signal?:
     | 'SIGABRT'
@@ -1359,12 +1362,12 @@ export interface MachineStopParams {
   app_name: string;
 
   /**
-   * Body param:
+   * Body param
    */
   signal?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   timeout?: Duration;
 }

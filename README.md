@@ -141,7 +141,9 @@ const response = await client.apps.list({ org_slug: 'REPLACE_ME' }).asResponse()
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: apps, response: raw } = await client.apps.list({ org_slug: 'REPLACE_ME' }).withResponse();
+const { data: apps, response: raw } = await client.apps
+  .list({ org_slug: 'REPLACE_ME' })
+  .withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(apps.apps);
 ```
