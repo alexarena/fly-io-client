@@ -87,6 +87,9 @@ import { buildHeaders } from '../../internal/headers';
 import { RequestOptions } from '../../internal/request-options';
 import { path } from '../../internal/utils/path';
 
+/**
+ * This site hosts documentation generated from the Fly.io Machines API OpenAPI specification. Visit our complete [Machines API docs](https://fly.io/docs/machines/api/apps-resource/) for details about using the Apps resource.
+ */
 export class Apps extends APIResource {
   machines: MachinesAPI.Machines = new MachinesAPI.Machines(this._client);
   secretkeys: SecretkeysAPI.Secretkeys = new SecretkeysAPI.Secretkeys(this._client);

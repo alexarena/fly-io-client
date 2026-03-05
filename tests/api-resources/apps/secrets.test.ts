@@ -8,7 +8,7 @@ const client = new FlyIoClient({
 });
 
 describe('resource secrets', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.apps.secrets.retrieve('secret_name', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource secrets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.apps.secrets.retrieve('secret_name', {
       app_name: 'app_name',
@@ -29,7 +29,7 @@ describe('resource secrets', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.apps.secrets.list('app_name');
     const rawResponse = await responsePromise.asResponse();
@@ -41,7 +41,7 @@ describe('resource secrets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -53,7 +53,7 @@ describe('resource secrets', () => {
     ).rejects.toThrow(FlyIoClient.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.apps.secrets.delete('secret_name', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -65,12 +65,12 @@ describe('resource secrets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.apps.secrets.delete('secret_name', { app_name: 'app_name' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createOrUpdate: only required params', async () => {
     const responsePromise = client.apps.secrets.createOrUpdate('secret_name', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -82,7 +82,7 @@ describe('resource secrets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createOrUpdate: required and optional params', async () => {
     const response = await client.apps.secrets.createOrUpdate('secret_name', {
       app_name: 'app_name',

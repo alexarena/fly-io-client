@@ -206,12 +206,12 @@ export interface SecretkeyCreateOrUpdateParams {
   app_name: string;
 
   /**
-   * Body param:
+   * Body param
    */
   type?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   value?: Array<number>;
 }
@@ -229,12 +229,12 @@ export interface SecretkeyDecryptParams {
   min_version?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   associated_data?: Array<number>;
 
   /**
-   * Body param:
+   * Body param
    */
   ciphertext?: Array<number>;
 }
@@ -252,12 +252,12 @@ export interface SecretkeyEncryptParams {
   min_version?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   associated_data?: Array<number>;
 
   /**
-   * Body param:
+   * Body param
    */
   plaintext?: Array<number>;
 }
@@ -269,12 +269,12 @@ export interface SecretkeyGenerateParams {
   app_name: string;
 
   /**
-   * Body param:
+   * Body param
    */
   type?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   value?: Array<number>;
 }
@@ -292,7 +292,7 @@ export interface SecretkeySignParams {
   min_version?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   plaintext?: Array<number>;
 }
@@ -310,12 +310,12 @@ export interface SecretkeyVerifyParams {
   min_version?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   plaintext?: Array<number>;
 
   /**
-   * Body param:
+   * Body param
    */
   signature?: Array<number>;
 }

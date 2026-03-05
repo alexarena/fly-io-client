@@ -8,7 +8,7 @@ const client = new FlyIoClient({
 });
 
 describe('resource machines', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create', async () => {
     const responsePromise = client.apps.machines.create('app_name', {});
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.apps.machines.retrieve('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -32,12 +32,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.apps.machines.retrieve('machine_id', { app_name: 'app_name' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.apps.machines.update('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -49,7 +49,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.apps.machines.update('machine_id', {
       app_name: 'app_name',
@@ -113,9 +113,16 @@ describe('resource machines', () => {
             ],
             image: 'image',
             name: 'name',
-            restart: { gpu_bid_price: 0, max_retries: 0, policy: 'no' },
+            restart: {
+              gpu_bid_price: 0,
+              max_retries: 0,
+              policy: 'no',
+            },
             secrets: [{ env_var: 'env_var', name: 'name' }],
-            stop: { signal: 'signal', timeout: { 'time.Duration': 0 } },
+            stop: {
+              signal: 'signal',
+              timeout: { 'time.Duration': 0 },
+            },
             user: 'user',
           },
         ],
@@ -158,7 +165,11 @@ describe('resource machines', () => {
           tty: true,
         },
         metadata: { foo: 'string' },
-        metrics: { https: true, path: 'path', port: 0 },
+        metrics: {
+          https: true,
+          path: 'path',
+          port: 0,
+        },
         mounts: [
           {
             add_size_gb: 0,
@@ -183,7 +194,11 @@ describe('resource machines', () => {
             user: 'user',
           },
         ],
-        restart: { gpu_bid_price: 0, max_retries: 0, policy: 'no' },
+        restart: {
+          gpu_bid_price: 0,
+          max_retries: 0,
+          policy: 'no',
+        },
         schedule: 'schedule',
         services: [
           {
@@ -204,7 +219,11 @@ describe('resource machines', () => {
                 type: 'type',
               },
             ],
-            concurrency: { hard_limit: 0, soft_limit: 0, type: 'type' },
+            concurrency: {
+              hard_limit: 0,
+              soft_limit: 0,
+              type: 'type',
+            },
             force_instance_description: 'force_instance_description',
             force_instance_key: 'force_instance_key',
             internal_port: 0,
@@ -219,12 +238,19 @@ describe('resource machines', () => {
                   h2_backend: true,
                   headers_read_timeout: 0,
                   idle_timeout: 0,
-                  response: { headers: { foo: {} }, pristine: true },
+                  response: {
+                    headers: { foo: {} },
+                    pristine: true,
+                  },
                 },
                 port: 0,
                 proxy_proto_options: { version: 'version' },
                 start_port: 0,
-                tls_options: { alpn: ['string'], default_self_signed: true, versions: ['string'] },
+                tls_options: {
+                  alpn: ['string'],
+                  default_self_signed: true,
+                  versions: ['string'],
+                },
               },
             ],
             protocol: 'protocol',
@@ -240,7 +266,10 @@ describe('resource machines', () => {
             tigris_bucket: 'tigris_bucket',
           },
         ],
-        stop_config: { signal: 'signal', timeout: { 'time.Duration': 0 } },
+        stop_config: {
+          signal: 'signal',
+          timeout: { 'time.Duration': 0 },
+        },
       },
       current_version: 'current_version',
       lease_ttl: 0,
@@ -254,7 +283,7 @@ describe('resource machines', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.apps.machines.list('app_name');
     const rawResponse = await responsePromise.asResponse();
@@ -266,19 +295,24 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.apps.machines.list(
         'app_name',
-        { include_deleted: true, region: 'region', state: 'state', summary: true },
+        {
+          include_deleted: true,
+          region: 'region',
+          state: 'state',
+          summary: true,
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(FlyIoClient.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('cordon: only required params', async () => {
     const responsePromise = client.apps.machines.cordon('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -290,12 +324,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('cordon: required and optional params', async () => {
     const response = await client.apps.machines.cordon('machine_id', { app_name: 'app_name' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('destroy: only required params', async () => {
     const responsePromise = client.apps.machines.destroy('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -307,12 +341,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('destroy: required and optional params', async () => {
     const response = await client.apps.machines.destroy('machine_id', { app_name: 'app_name', force: true });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('executeCommand: only required params', async () => {
     const responsePromise = client.apps.machines.executeCommand('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -324,7 +358,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('executeCommand: required and optional params', async () => {
     const response = await client.apps.machines.executeCommand('machine_id', {
       app_name: 'app_name',
@@ -336,7 +370,7 @@ describe('resource machines', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listEvents: only required params', async () => {
     const responsePromise = client.apps.machines.listEvents('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -348,12 +382,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listEvents: required and optional params', async () => {
     const response = await client.apps.machines.listEvents('machine_id', { app_name: 'app_name', limit: 0 });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listProcesses: only required params', async () => {
     const responsePromise = client.apps.machines.listProcesses('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -365,7 +399,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listProcesses: required and optional params', async () => {
     const response = await client.apps.machines.listProcesses('machine_id', {
       app_name: 'app_name',
@@ -374,7 +408,7 @@ describe('resource machines', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listVersions: only required params', async () => {
     const responsePromise = client.apps.machines.listVersions('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -386,12 +420,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listVersions: required and optional params', async () => {
     const response = await client.apps.machines.listVersions('machine_id', { app_name: 'app_name' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('restart: only required params', async () => {
     const responsePromise = client.apps.machines.restart('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -403,7 +437,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('restart: required and optional params', async () => {
     const response = await client.apps.machines.restart('machine_id', {
       app_name: 'app_name',
@@ -412,7 +446,7 @@ describe('resource machines', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('signal: only required params', async () => {
     const responsePromise = client.apps.machines.signal('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -424,7 +458,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('signal: required and optional params', async () => {
     const response = await client.apps.machines.signal('machine_id', {
       app_name: 'app_name',
@@ -432,7 +466,7 @@ describe('resource machines', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('start: only required params', async () => {
     const responsePromise = client.apps.machines.start('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -444,12 +478,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('start: required and optional params', async () => {
     const response = await client.apps.machines.start('machine_id', { app_name: 'app_name' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('stop: only required params', async () => {
     const responsePromise = client.apps.machines.stop('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -461,7 +495,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('stop: required and optional params', async () => {
     const response = await client.apps.machines.stop('machine_id', {
       app_name: 'app_name',
@@ -470,7 +504,7 @@ describe('resource machines', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('suspend: only required params', async () => {
     const responsePromise = client.apps.machines.suspend('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -482,12 +516,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('suspend: required and optional params', async () => {
     const response = await client.apps.machines.suspend('machine_id', { app_name: 'app_name' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('uncordon: only required params', async () => {
     const responsePromise = client.apps.machines.uncordon('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -499,12 +533,12 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('uncordon: required and optional params', async () => {
     const response = await client.apps.machines.uncordon('machine_id', { app_name: 'app_name' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('waitForState: only required params', async () => {
     const responsePromise = client.apps.machines.waitForState('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -516,7 +550,7 @@ describe('resource machines', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('waitForState: required and optional params', async () => {
     const response = await client.apps.machines.waitForState('machine_id', {
       app_name: 'app_name',

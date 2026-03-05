@@ -8,7 +8,7 @@ const client = new FlyIoClient({
 });
 
 describe('resource apps', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create', async () => {
     const responsePromise = client.apps.create({});
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource apps', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.apps.retrieve('app_name');
     const rawResponse = await responsePromise.asResponse();
@@ -32,7 +32,7 @@ describe('resource apps', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.apps.list({ org_slug: 'org_slug' });
     const rawResponse = await responsePromise.asResponse();
@@ -44,12 +44,12 @@ describe('resource apps', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.apps.list({ org_slug: 'org_slug' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.apps.delete('app_name');
     const rawResponse = await responsePromise.asResponse();
@@ -61,7 +61,7 @@ describe('resource apps', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createDeployToken', async () => {
     const responsePromise = client.apps.createDeployToken('app_name', {});
     const rawResponse = await responsePromise.asResponse();

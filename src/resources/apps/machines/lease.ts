@@ -6,6 +6,9 @@ import { buildHeaders } from '../../../internal/headers';
 import { RequestOptions } from '../../../internal/request-options';
 import { path } from '../../../internal/utils/path';
 
+/**
+ * This site hosts documentation generated from the Fly.io Machines API OpenAPI specification. Visit our complete [Machines API docs](https://fly.io/docs/machines/api/machines-resource/) for details about using the Machines resource.
+ */
 export class LeaseResource extends APIResource {
   /**
    * Create a lease for a specific Machine within an app using the details provided
@@ -86,7 +89,7 @@ export interface LeaseCreateParams {
   app_name: string;
 
   /**
-   * Body param:
+   * Body param
    */
   description?: string;
 
