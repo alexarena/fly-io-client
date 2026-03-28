@@ -8,7 +8,7 @@ const client = new FlyIoClient({
 });
 
 describe('resource metadata', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.apps.machines.metadata.retrieve('machine_id', { app_name: 'app_name' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,12 +20,12 @@ describe('resource metadata', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.apps.machines.metadata.retrieve('machine_id', { app_name: 'app_name' });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.apps.machines.metadata.update('key', {
       app_name: 'app_name',
@@ -40,7 +40,7 @@ describe('resource metadata', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.apps.machines.metadata.update('key', {
       app_name: 'app_name',
@@ -48,7 +48,7 @@ describe('resource metadata', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.apps.machines.metadata.delete('key', {
       app_name: 'app_name',
@@ -63,7 +63,7 @@ describe('resource metadata', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.apps.machines.metadata.delete('key', {
       app_name: 'app_name',
